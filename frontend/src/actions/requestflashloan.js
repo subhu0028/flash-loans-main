@@ -28,7 +28,7 @@ async function requestflashloan(signer, amount) {
   );
   let requestflashloan = flashloancontract.connect(signer);
   let tx = await requestflashloan.requestFlashLoan(
-    "0xb4b0Af2d96E2859E8413b7937E3E9eB29CC4Df4E",
+    "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
     amount
   ); //1000000 = 1 USDC
   await tx.wait();

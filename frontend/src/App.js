@@ -11,6 +11,7 @@ const { ethers } = require("ethers");
 function App() {
   const owneraddress = '0x255C7648b6F03C802F09d6bD9226228e2a83f9F';
   let provider;
+  console.log(process.env)
   const[address,setAddress] = useState('');
   const [isAddress, setIsAddress] = useState(false);
   const[Balance, setBalance] = useState('0');
@@ -67,7 +68,7 @@ onConnect();
   }, [address, owneraddress])
 
   useEffect(() => {
-    if( Balance !== 0){
+    if( Balance != 0){
       setBalancestring("Balance is: " + Balance + " USDC")
     }else{
       setBalancestring(false)
