@@ -10,7 +10,7 @@ async function main() {
   await flashLoan.waitForDeployment();
 
   console.log("Flash loan contract deployed: ", flashLoan.target);
-  //0x904abFd9D5042b2908f1E5F1cE76a77c7d0394A2
+  // 0xb4b0Af2d96E2859E8413b7937E3E9eB29CC4Df4E
 }
 
 main().catch((error) => {

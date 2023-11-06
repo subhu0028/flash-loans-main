@@ -9,7 +9,7 @@ const { ethers } = require("ethers");
 
 
 function App() {
-  const owneraddress = '0x255C7648b6F03C802F09d6bD9226228e2a83f9F';
+  const owneraddress = '0x255C7648b6F03C802F09d6bD9226228e2a83f9FD';
   let provider;
   console.log(process.env)
   const[address,setAddress] = useState('');
