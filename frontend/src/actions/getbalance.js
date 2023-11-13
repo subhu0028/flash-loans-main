@@ -2,13 +2,13 @@ import json from "./FlashLoan.json";
 const { ethers, toNumber } = require("ethers");
 
 // this one is for FlashLoan.sol
-const DEPLOYED_CONTRACT_ADDRESS = '0xb4b0Af2d96E2859E8413b7937E3E9eB29CC4Df4E';
+// const DEPLOYED_CONTRACT_ADDRESS = '0xb4b0Af2d96E2859E8413b7937E3E9eB29CC4Df4E';
 
 // for FlashLoanArbitrage.sol
 //const DEPLOYED_CONTRACT_ADDRESS = '0x54eCe15cd1681877c1a981D4Cb66cEF84BA5eD04';
 
 // for Dex.sol
-// const DEPLOYED_CONTRACT_ADDRESS = '0x31904f5D0F5baB5aF2e2ebCE1c21Ae94bB55ab4d';
+const DEPLOYED_CONTRACT_ADDRESS = '0x31904f5D0F5baB5aF2e2ebCE1c21Ae94bB55ab4d';
 
 async function getAbi() {
   // const data = await fsPromises.readFile(ABI_FILE_PATH, 'utf8');
@@ -53,3 +53,6 @@ async function getbalance(signer) {
 }
 
 export default getbalance;
+
+
+
