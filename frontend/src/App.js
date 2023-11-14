@@ -99,48 +99,48 @@ onConnect();
     withdraw(signer);
   }
 
-  // return (
-  //   <div className="App">
-  //     {
-  //       isAddress 
-
-  //       ? 
-        
-  //       <div>
-  //         <h1>Welcome to Flash Loan!</h1>
-  //         <h4>This is the owner side.</h4>
-  //         <button onClick={getbalHandler}>get balance</button>
-  //         <text>{BalanceString}</text>
-  //         <div>
-  //           <button onClick={WithdrawHandler}>Withdraw</button>
-  //         </div>
-  //       </div> 
-        
-  //       : 
-        
-  //       <div>
-  //         <h1>Welcome to Flash Loans!</h1>
-  //         <div className="input-box">
-  //           <span className="details">Amount (USDC) </span>
-  //           <input
-  //             onChange={changeHandler}
-  //             name="amount"
-  //             type="text"
-  //             value={formDetails.amount}
-  //             placeholder="Enter the Amount to be loaned"
-  //             required
-  //           />
-  //           </div>
-  //             <button onClick={RequestHandler}>Request flash loan</button> 
-  //           </div>
-  //     } </div>
-  // );
-
   return (
-    <div>
-      <DexApp></DexApp>
-    </div>
+    <div className="App">
+      {
+        isAddress 
+
+        ? 
+        
+        <div>
+          <h1>Welcome to Flash Loan!</h1>
+          <h4>This is the owner side.</h4>
+          <button onClick={getbalHandler}>get balance</button>
+          <text>{BalanceString}</text>
+          <div>
+            <button onClick={WithdrawHandler}>Withdraw</button>
+          </div>
+        </div> 
+        
+        : 
+        
+        <div>
+          <h1>Welcome to Flash Loans!</h1>
+          <div className="input-box">
+            <span className="details">Amount (USDC) </span>
+            <input
+              onChange={changeHandler}
+              name="amount"
+              type="text"
+              value={formDetails.amount}
+              placeholder="Enter the Amount to be loaned"
+              required
+            />
+            </div>
+              <button onClick={RequestHandler}>Request flash loan</button> 
+            </div>
+      } </div>
   );
+
+  // return (
+  //   <div>
+  //     <DexApp></DexApp>
+  //   </div>
+  // );
 }
 
 export default App;
