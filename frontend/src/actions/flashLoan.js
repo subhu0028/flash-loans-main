@@ -1,23 +1,15 @@
-import "./App.css";
+import "../App.css";
 import React from "react";
 import { useState, useEffect } from "react";
 import Web3 from "web3";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import requestflashloan from "./actions/requestflashloan";
-import getbalance from "./actions/getbalance";
-import withdraw from "./actions/withdraw";
-
-// import FlashLoanArbitrageApp from './actions/flashLoanArbitrageApp';
-import Dex from "./actions/dex.js";
-import FLA from "./actions/fla.js";
-import FlashLoan from "./actions/flashLoan.js";
-
-import NavigationHeader from "./actions/navigationHeader.js";
+import requestflashloan from "./requestflashloan";
+import getbalance from "./getbalance";
+import withdraw from "./withdraw";
 
 const { ethers } = require("ethers");
 
-function App() {
-	const owneraddress = "0x255C7648b6F03C802F09d6bD9226228e2a83f9F";
+function FlashLoan() {
+	const owneraddress = "0x255C7648b6F03C802F09d6bD9226228e2a83f9FD";
 	let provider;
 	console.log(process.env);
 	const [address, setAddress] = useState("");
@@ -100,55 +92,37 @@ function App() {
 		withdraw(signer);
 	};
 
-	// return (
-	//   <div className="App">
-	//     {
-	//       isAddress
-
-	//       ?
-
-	//       <div>
-	//         <h1>Welcome to Flash Loan!</h1>
-	//         <h4>This is the owner side.</h4>
-	//         <button onClick={getbalHandler}>get balance</button>
-	//         <text>{BalanceString}</text>
-	//         <div>
-	//           <button onClick={WithdrawHandler}>Withdraw</button>
-	//         </div>
-	//       </div>
-
-	//       :
-
-	//       <div>
-	//         <h1>Welcome to Flash Loans!</h1>
-	//         <div className="input-box">
-	//           <span className="details">Amount (USDC) </span>
-	//           <input
-	//             onChange={changeHandler}
-	//             name="amount"
-	//             type="text"
-	//             value={formDetails.amount}
-	//             placeholder="Enter the Amount to be loaned"
-	//             required
-	//           />
-	//           </div>
-	//             <button onClick={RequestHandler}>Request flash loan</button>
-	//           </div>
-	//     } </div>
-	// );
-
 	return (
-		<BrowserRouter>
-			<div>
-				<NavigationHeader></NavigationHeader>
-				<Routes>
-					<Route path="/flashLoan" element={<FlashLoan></FlashLoan>}></Route>
-					<Route path="/flashLoanArbitrage" element={<FLA></FLA>}></Route>
-					<Route path="/dex" element={<Dex></Dex>}></Route>
-				</Routes>
-			</div>
-		</BrowserRouter>
+		<div className="App">
+			{isAddress ? (
+				<div>
+					<h1>Welcome to Flash Loan!</h1>
+					<h4>This is the owner side.</h4>
+					<button onClick={getbalHandler}>get balance</button>
+					<text>{BalanceString}</text>
+					<div>
+						<button onClick={WithdrawHandler}>Withdraw</button>
+					</div>
+				</div>
+			) : (
+				<div>
+					<h1>Welcome to Flash Loans!</h1>
+					<div className="input-box">
+						<span className="details">Amount (USDC) </span>
+						<input
+							onChange={changeHandler}
+							name="amount"
+							type="text"
+							value={formDetails.amount}
+							placeholder="Enter the Amount to be loaned"
+							required
+						/>
+					</div>
+					<button onClick={RequestHandler}>Request flash loan</button>
+				</div>
+			)}{" "}
+		</div>
 	);
 }
 
-export default App;
+export default FlashLoan;

@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import Web3 from "web3";
 
-import json from "./FlashLoan.json";
+import json from "./Dex.json";
 
 const DexApp = () => {
 	const [web3, setWeb3] = useState(null);
